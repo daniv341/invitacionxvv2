@@ -1,40 +1,68 @@
-/* Reset básico */
+/* RESET Y BASE */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #111;
-    font-family: "Pacifico", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.container {
-    width: 40%;
-    height: 100%;
-}
-
-section {
-    position: relative; /* CLAVE para superponer */
+html, body {
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-/* Imagen de fondo */
+body {
+    background: #111;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+
+    display: flex;
+    justify-content: center;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.container {
+    width: 40%;
+    height: 100vh;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bg-blur {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("img/quince.jpeg");
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(20px);
+    transform: scale(1.1); /* evita bordes */
+    z-index: 0;
+}
+
+/* IMAGEN (FONDO REAL) */
+
 .frase img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 /* BOTONES */
+
 .botones {
     position: absolute;
     top: 20px;
@@ -43,23 +71,25 @@ section {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    z-index: 2;
 }
 
 .btn-opcion {
-    background: transparent;   /* quita fondo blanco */
-    border: none;              /* quita borde */
-    padding: 0;                /* elimina espacio interno */
+    background: transparent;
+    border: none;
+    padding: 0;
     cursor: pointer;
 }
 
 .btn-opcion img {
-    width: 20px;               /* tamaño del botón */
+    width: 20px;
     height: auto;
     display: block;
 }
 
-/* FRASE */
-.titulo h1{
+/* TEXTOS */
+
+.titulo h1 {
     position: absolute;
     top: 1%;
     left: 0;
@@ -68,29 +98,27 @@ section {
     color: white;
     text-align: center;
     font-size: 26px;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
     font-weight: bold;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    z-index: 2;
 }
 
-.frase h2{
+.frase h2 {
     position: absolute;
     top: 70%;
     left: 50%;
     transform: translateX(-50%);
-    
+
     color: white;
     text-align: center;
     font-size: 22px;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
     padding: 0 10px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 
     font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
+    z-index: 2;
 }
 
-/* FECHA */
 .fecha h2 {
     position: absolute;
     bottom: 20%;
@@ -102,12 +130,9 @@ section {
     text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 
     font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
+    z-index: 2;
 }
 
-/* NOMBRE */
 .nombre h1 {
     position: absolute;
     bottom: 30px;
@@ -119,12 +144,13 @@ section {
 
     transform: rotate(-10deg);
     text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    z-index: 2;
 }
 
 /* PANEL */
 
 .panel {
-    display: none; /* oculto por defecto */
+    display: none;
     position: absolute;
     top: 60px;
     left: 20px;
@@ -132,11 +158,12 @@ section {
     width: 260px;
     padding: 15px;
 
-    background-color: #ffffff; /* NO transparente */
+    background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 
     font-family: Arial, sans-serif;
+    z-index: 3;
 }
 
 .panel h3 {
@@ -158,16 +185,16 @@ section {
     cursor: pointer;
 }
 
-/*  LAPTOPS y DESKTOPS */
+/* RESPONSIVE */
 
+/*  Laptops */
 @media (max-width: 1200px) {
     .container {
         width: 60%;
     }
 }
 
-/*  TABLETS */
-
+/*  Tablets */
 @media (max-width: 1023px) {
     .container {
         width: 80%;
@@ -198,14 +225,8 @@ section {
     }
 }
 
-
-/* MÓVILES */
-
+/*  Móviles */
 @media (max-width: 767px) {
-    body {
-        align-items: flex-start;
-    }
-
     .container {
         width: 100%;
         height: 100vh;
@@ -242,8 +263,7 @@ section {
     }
 }
 
-/* MÓVILES CHICOS */
-
+/* Móviles chicos */
 @media (max-width: 480px) {
     .titulo h1 {
         font-size: 18px;
