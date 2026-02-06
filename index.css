@@ -120,3 +120,151 @@ section {
     transform: rotate(-10deg);
     text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
+
+/* PANEL */
+
+.panel {
+    display: none; /* oculto por defecto */
+    position: absolute;
+    top: 60px;
+    left: 20px;
+
+    width: 260px;
+    padding: 15px;
+
+    background-color: #ffffff; /* NO transparente */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+    font-family: Arial, sans-serif;
+}
+
+.panel h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.panel p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+.panel button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 6px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/*  LAPTOPS y DESKTOPS */
+
+@media (max-width: 1200px) {
+    .container {
+        width: 60%;
+    }
+}
+
+/*  TABLETS */
+
+@media (max-width: 1023px) {
+    .container {
+        width: 80%;
+    }
+
+    .titulo h1 {
+        font-size: 22px;
+    }
+
+    .frase h2 {
+        font-size: 20px;
+        top: 68%;
+    }
+
+    .fecha h2 {
+        font-size: 16px;
+        bottom: 18%;
+    }
+
+    .nombre h1 {
+        font-size: 22px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .btn-opcion img {
+        width: 18px;
+    }
+}
+
+
+/* MÓVILES */
+
+@media (max-width: 767px) {
+    body {
+        align-items: flex-start;
+    }
+
+    .container {
+        width: 100%;
+        height: 100vh;
+    }
+
+    section {
+        height: 100vh;
+    }
+
+    .titulo h1 {
+        font-size: 20px;
+        padding: 0 12px;
+    }
+
+    .frase h2 {
+        font-size: 18px;
+        top: 65%;
+    }
+
+    .fecha h2 {
+        font-size: 15px;
+        bottom: 16%;
+    }
+
+    .nombre h1 {
+        font-size: 20px;
+        transform: rotate(-8deg);
+    }
+
+    .panel {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* MÓVILES CHICOS */
+
+@media (max-width: 480px) {
+    .titulo h1 {
+        font-size: 18px;
+    }
+
+    .frase h2 {
+        font-size: 16px;
+        top: 63%;
+    }
+
+    .fecha h2 {
+        font-size: 14px;
+    }
+
+    .nombre h1 {
+        font-size: 18px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .btn-opcion img {
+        width: 16px;
+    }
+}

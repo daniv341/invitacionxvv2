@@ -27,7 +27,7 @@
             <img src="img/btn_invitacion-removebg-preview.png" alt="Botón" />
           </button>
 
-          <button class="btn-opcion">
+          <button class="btn-opcion" id="botonRegalo">
             <img src="img/btn_regalo-removebg-preview.png" alt="Botón" />
           </button>
         </div>
@@ -35,7 +35,6 @@
         <div class="frase">
           <img src="img/quince.jpeg" alt="" />
           <h2>Te invito a mi fiesta soñada</h2>
-          
         </div>
 
         <div class="fecha">
@@ -45,8 +44,28 @@
         <div class="nombre">
           <h1>Rodriga</h1>
         </div>
-
       </section>
     </div>
+
+    <div id="panelPago" class="panel">
+      <h3>Datos de pago</h3>
+      <p><strong>Alias:</strong> mi.alias.ejemplo</p>
+      <p><strong>CVU:</strong> 0000003100051234567890</p>
+      <button id="cerrar">Cerrar</button>
+    </div>
+
+    <script>
+      const btn = document.getElementById("botonRegalo");
+      const panel = document.getElementById("panelPago");
+      const cerrar = document.getElementById("cerrar");
+
+      btn.addEventListener("click", () => {
+        panel.style.display = "block";
+      });
+
+      cerrar.addEventListener("click", () => {
+        panel.style.display = "none";
+      });
+    </script>
   </body>
 </html>
